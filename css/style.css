@@ -18,6 +18,10 @@ a {
   color: inherit;
 }
 
+img {
+  width: 100%;
+}
+
 .container {
   max-width: 1300px;
   min-width: 300px;
@@ -91,12 +95,16 @@ a {
   color: #f0a540;
 }
 
-/* .nav__link:last-child:hover {
+.nav__item:last-child .nav__link:hover {
   color: red;
-} */
+}
 
 .link-color {
   background-color: #f0a540;
+}
+
+.burger-btn {
+  display: none;
 }
 
 .header__bottom {
@@ -166,11 +174,11 @@ a {
   margin-bottom: 60px;
   width: 100%;
   justify-content: space-between;
-  flex-wrap: wrap;
 }
 
 .attraction__item {
-  max-width: 300px;
+  flex-basis: 300px;
+  flex-shrink: 1;
   flex-direction: column;
   background-color: #fff;
   font-size: 0;
@@ -181,9 +189,14 @@ a {
   transform: scale(1.05);
 }
 
+.attraction__item-link {
+  display: block;
+}
+
 .attraction__item-link img {
-  max-width: 300px;
-  max-height: 400px;
+  max-width: 100%;
+  object-fit: cover;
+  max-height: 100%;
 }
 
 .attraction__descr {
@@ -525,17 +538,16 @@ a {
   content: '';
   position: absolute;
   top: 50%;
-  left: 45%;
+  left: 50%;
+  transform: translateX(-50%);
   width: 0;
   height: 4px;
   border-radius: 4px;
   background-color: #fff;
-  opacity: 0;
   transition: opacity .3s ease-in-out, width .3s ease-in-out;
 }
 
 .contacts__list-item:hover::after {
-  opacity: 1;
   width: 40px;
 }
 
